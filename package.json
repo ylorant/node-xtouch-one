@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "X-Touch One interface for Node JS",
   "main": "src/index.js",
+  "homepage": "https://github.com/ylorant/node-x-touch-one",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ylorant/node-x-touch-one.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,5 +15,11 @@
   "license": "MIT",
   "dependencies": {
     "midi": "^2.0.0"
-  }
+  },
+  "keywords": [
+    "x-touch",
+    "behringer",
+    "midi",
+    "daw"
+  ]
 }
