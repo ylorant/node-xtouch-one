@@ -365,7 +365,7 @@ class XTouchOne extends EventEmitter {
 
     clearLCD()
     {
-        this.setLCDDisplay("", LCD.Background.BLACK, false, false);
+        this.setLCD("", LCD.Background.BLACK, false, false);
     }
 
     /**
