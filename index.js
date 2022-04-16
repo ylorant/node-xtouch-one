@@ -322,6 +322,15 @@ class XTouchOne extends EventEmitter {
         this.setSegmentDisplay(" ".repeat(12));
     }
 
+    /**
+     * Sets the text on the LCD screen.
+     * 
+     * @param {string|array} text The text to be shown, either as one string (14 chars max., split between top and bottom)
+     *                            or as an array, where the top row is the 1st element and the bottom one is the 2nd. 
+     * @param {int} background The background color to set. Available colors are available in LCD.
+     * @param {bool} invertTop Set to true to invert the colors on the top row. Defaults to false.
+     * @param {bool} invertBottom Set to true to invert the colors on the bottom row. Defaults to false.
+     */
     setLCD(text, background, invertTop = false, invertBottom = false)
     {
         let updateMsg = [0x4c, 0x00];
@@ -363,6 +372,9 @@ class XTouchOne extends EventEmitter {
         this.sendSysExMessage(updateMsg);
     }
 
+    /**
+     * Clears the LCD.
+     */
     clearLCD()
     {
         this.setLCD("", LCD.Background.BLACK, false, false);
