@@ -1,6 +1,6 @@
-const XTouchOne = require('../src/index');
-const Controls = require('../src/controls');
-const { ButtonNames, LightStatus } = require('../src/controls');
+const XTouchOne = require('../index');
+const Controls = require('../controls');
+const { ButtonNames, LightStatus } = require('../controls');
 
 let btnMessages = {};
 btnMessages[Controls.Buttons.REWIND] = "123.45678.9.012";
@@ -21,7 +21,12 @@ dev.on("btnpress", (btn) => {
 
         dev.light(btn, LightStatus.ON);
         dev.setSegmentDisplay(btnMessages[btn]);
+
+    }
+
+    if(btn == Controls.Buttons.ENTER) {
+        dev.light(Controls.Buttons.SEGMENT_SOLO, Controls.LightStatus.ON);
     }
 });
 
-dev.on('btnrelease', (btn) => console.log(ButtonNames[btn])); 
+dev.on('btnrelease', (btn) => console.log(ButtonNames[btn]));

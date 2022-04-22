@@ -1,5 +1,5 @@
-const Controls = require('../src/controls');
-const XTouchOne = require('../src/index');
+const Controls = require('../controls');
+const XTouchOne = require('../index');
 
 let dev = new XTouchOne();
 

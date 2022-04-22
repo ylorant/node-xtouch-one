@@ -52,6 +52,8 @@ xtouch.light(Controls.Button.SCRUB, Controls.LightStatus.BLINK);
 xtouch.light(Controls.Button.ENTER, Controls.LightStatus.ON);
 ```
 
+*Note: You cannot set the button SEGMENT_SOLO to BLINK, only ON and OFF.*
+
 ### `setFaderLevel(value)`
 
 Moves the fader to the given value, between 0 (bottom) and 127 (top).

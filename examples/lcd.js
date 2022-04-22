@@ -1,6 +1,6 @@
-const Controls = require('../src/controls');
-const XTouchOne = require('../src/index');
-const LCD = require('../src/lcd');
+const Controls = require('../controls');
+const XTouchOne = require('../index');
+const LCD = require('../lcd');
 
 let dev = new XTouchOne();
 

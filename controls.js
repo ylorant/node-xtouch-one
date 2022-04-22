@@ -1,6 +1,7 @@
 const Controls = {};
 
 Controls.Buttons = {
+    SEGMENT_SOLO: 0,
     BPM: 1,
     MASTER: 2,
     SELECT: 3,
