@@ -1,6 +1,6 @@
 {
   "name": "node-xtouch-one",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "X-Touch One interface for Node JS",
   "homepage": "https://github.com/ylorant/node-x-touch-one",
   "repository": {
