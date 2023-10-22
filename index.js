@@ -16,8 +16,8 @@ class XTouchOne extends EventEmitter {
         super();
 
         // Midi devices
-        this.input = new Midi.input();
-        this.output = new Midi.output();
+        this.input = new Midi.Input();
+        this.output = new Midi.Output();
 
         // Default encoder mode is relative, corrected if we detect an absolute value when reading
         this.encoderMode = null;
@@ -39,16 +39,20 @@ class XTouchOne extends EventEmitter {
             
             if(!midiInput) {
                 this.emit("debug", "No input device ID provided, auto-discovering it.");
-                midiInput = parseInt(Object.keys(devices.input)[0]);
+                if(Object.keys(devices.input).length > 0) {
+                    midiInput = parseInt(Object.keys(devices.input)[0]);
+                }
             }
             
             if(!midiOutput) {
                 this.emit("debug", "No output device ID provided, auto-discovering it.");
-                midiOutput = parseInt(Object.keys(devices.output)[0]);
+                if(Object.keys(devices.output).length > 0) {
+                    midiOutput = parseInt(Object.keys(devices.output)[0]);
+                }
             }
         }
         
-        if(!midiInput || !midiOutput) {
+        if(midiInput === null || midiOutput === null) {
             this.emit("error", "No device discovered.");
             return;
         }
@@ -94,7 +98,7 @@ class XTouchOne extends EventEmitter {
             let deviceName = this.input.getPortName(i);
             let debugMsg = i + ": " + deviceName;
 
-            if(deviceName.match(/x-touch/i)) {
+            if(deviceName.match(/x-touch one/i)) {
                 devices.input[i] = deviceName;
                 debugMsg += " (match)";
             }
